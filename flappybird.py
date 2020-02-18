@@ -55,7 +55,7 @@ class TBlock(pygame.sprite.Sprite):
    def __init__(self,x,h1):
       super().__init__()
       self.image=pygame.image.load('tp.png')
-      self.image=pygame.transform.scale(self.image,(80,h1))
+      self.image=pygame.transform.scale(self.image,(50,h1))
       self.rect=self.image.get_rect()
       self.rect.x,self.rect.y=x,0
    def update(self):
@@ -65,7 +65,7 @@ class BBlock(pygame.sprite.Sprite):
    def __init__(self,x,h2):
       super().__init__()
       self.image=pygame.image.load('bp.png')
-      self.image=pygame.transform.scale(self.image,(80,h2))
+      self.image=pygame.transform.scale(self.image,(50,h2))
       self.rect=self.image.get_rect()
       self.rect.x,self.rect.y=x,dh-self.rect.height
    def update(self):
