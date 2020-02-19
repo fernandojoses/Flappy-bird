@@ -37,12 +37,12 @@ class Bird(pygame.sprite.Sprite):
          if self.fc+1<28:
             self.fc+=1
             self.image=pimg[self.fc//7]
-            self.image=pygame.transform.scale(self.image,(100,85))
+            self.image=pygame.transform.scale(self.image,(53,53))
          else:
             self.fc=0
       else:
          self.image=pimg[0]
-         self.image=pygame.transform.scale(self.image,(100,85))
+         self.image=pygame.transform.scale(self.image,(53,53))
       self.vel+=self.acc
       self.pos+=self.vel+0.5*self.acc
       if self.pos.y<=0+self.rect.width/2:
@@ -113,18 +113,6 @@ class Game:
       msgrect=msgtxt.get_rect()
       msgrect.center=x/2,y/2
       screen.blit(msgtxt,(msgrect.center))
-   def pause(self):
-      wait=1
-      while wait:
-         for event in pygame.event.get():
-            if event.type==pygame.QUIT:
-               pygame.quit()
-               quit()
-            if event.type==pygame.KEYDOWN:
-               if event.key==pygame.K_RETURN:
-                  wait=0
-         self.msg("Paused",dw-100,dh-100,blue,40)
-         pygame.display.flip()
    def over(self):
       wait=1
       self.gover=1
